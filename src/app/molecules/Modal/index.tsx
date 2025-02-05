@@ -43,14 +43,14 @@ export default function Modal({ modalState, setOpen, tabs, ids }: any) {
           >
             <SubHeading heading="Select Week" classes="text-center mb-10" />
 
-            <div className="flex justify-around">
+            <div className="flex justify-around flex-wrap">
               {tabs.map((item: any, key: number) => {
                 return (
                   key !== 0 && (
                     <div
                       key={key}
                       onClick={() => setActiveWeek(key)}
-                      className={`cursor-pointer px-5 py-2 rounded ${
+                      className={`cursor-pointer px-5 py-2 rounded mb-2 ${
                         activeWeek === key ? "bg-blue-100" : "bg-gray-100"
                       }`}
                     >
