@@ -33,6 +33,7 @@ const Home = () => {
 
   const addId = (newId: number) => {
     setIds((prevIds) => [...prevIds, newId]);
+    console.log(ids);
   };
   const weeksState = useSelector((state: any) => state.recipes); 
 
@@ -48,7 +49,7 @@ const Home = () => {
           <SubHeading heading="Week Orders" />
         </Container>
         <Container>
-          <Tabs ids={ids} setWeek={setWeek}/>
+          <Tabs ids={ids} setWeek={setWeek} setIds={setIds} />
         </Container>
         <Container className={`${gardient} py-20`} subClasses='flex justify-between flex-wrap'>
           {week == 0 ? recipes?.map((item : any , key : number)=>{

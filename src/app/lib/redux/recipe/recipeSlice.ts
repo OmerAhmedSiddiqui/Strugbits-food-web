@@ -38,14 +38,12 @@ export const recipeSlice = createSlice({
       }
     },
 
-    // New reducer to remove an ID from a given week
     removeRecipeFromWeek: (
       state,
       action: PayloadAction<{ week: number, recipeId: number }>
     ) => {
       const { week, recipeId } = action.payload;
 
-      // Remove the recipe ID from the correct week's array
       if (week === 1) {
         state.week1 = state.week1.filter(id => id !== recipeId);
       } else if (week === 2) {
@@ -59,8 +57,6 @@ export const recipeSlice = createSlice({
   },
 });
 
-// Export the actions
 export const { addRecipesToWeek, removeRecipeFromWeek } = recipeSlice.actions;
 
-// Export the reducer
 export default recipeSlice.reducer;

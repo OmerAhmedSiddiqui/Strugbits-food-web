@@ -3,18 +3,19 @@ import SubHeading from '@/app/atoms/Subheading/page'
 import React, { useState } from 'react'
 import Modal from '../Modal'
 
-const Tabs = ({ids , setWeek} : any) => {
+const Tabs = ({ids , setWeek , setIds } : any) => {
   const tabs = ["All Meals", "Week 1", "Week 2", "Week 3", "Week 4"]
   const [tabIndex , setTabIndex] = useState(0)
   const [open, setOpen] = useState(false)
   return (
     <div>
       <div className='grid grid-flow-col md:grid-rows-1 grid-rows-3 gap-4 py-10'>
-        {tabs.map((item : any , key : number)=>{
+        {tabs.map((item : any , key : number )=>{
           return (
             <div  key={key} onClick={()=>{
               setTabIndex(key)
               setWeek(key)
+              setIds([])
             }}>
               <SubHeading heading={item} classes={`text-lg text-center py-2 w-[80%]`} active={tabIndex == key && "active"} setTabIndex={setTabIndex}/>
             </div>
